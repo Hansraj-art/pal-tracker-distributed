@@ -8,6 +8,9 @@ applications:
   env:
 #    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-tracker-distributed-hsp4.apps.evans.pal.pivotal.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    management.endpoint.health.show-details: always
+    management.health.circuitbreakers.enabled: true
+    management.health.hystrix.enabled: false
   services:
   - tracker-backlog-database
   - tracker-service-registry
